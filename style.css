@@ -1,0 +1,55 @@
+:root{
+    --radius: 500px;
+}
+
+body{
+    color: white;
+background-color: #333;
+    display: grid;
+    grid-template-columns: 100px 100px 1fr 100px 100px;
+    min-height: 100dvh;
+
+    font-family: monospace;
+    font-size: xx-large;
+}
+
+section{
+    grid-column: 2/5;
+    background-color: var(--orange);
+
+    display: inherit;
+    grid-template-columns: inherit;
+}
+section > *{
+    grid-column: 3/4;
+    text-align: center;
+}
+
+.wrapper{
+    background-color: #101010;
+    grid-column: 2/5;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.diagram{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    width: var(--radius);
+    height: var(--radius);
+    position: relative;
+}
+.diagram > h4 {
+    color: black;
+    margin: 20px;
+    position: absolute;
+    transform: translate(
+        calc(sin(var(--left)) * (var(--radius) / 4)  ),
+        calc(cos(var(--top)) * -1 * (var(--radius) / 4) ) 
+        );
+}
